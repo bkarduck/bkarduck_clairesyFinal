@@ -90,7 +90,7 @@ def setUpDatabase(db_name):
 
 def setUpCountyTable(cur, conn):
     
-    cur.execute(f'CREATE TABLE IF NOT EXISTS CountyFIP (countyID TEXT PRIMARY KEY, name TEXT,  stateFIP TEXT, countyFIP TEXT)')
+    cur.execute(f'CREATE TABLE IF NOT EXISTS CountyFIP (countyID TEXT PRIMARY KEY, name TEXT)')
     cur.execute(f'CREATE TABLE IF NOT EXISTS Low100Poverty (countyID TEXT PRIMARY KEY, povertyRate NUMBER, medianIncome NUMBER)')
     cur.execute(f'CREATE TABLE IF NOT EXISTS High100Poverty (countyID TEXT PRIMARY KEY, povertyRate NUMBER, medianIncome NUMBER)')
 
