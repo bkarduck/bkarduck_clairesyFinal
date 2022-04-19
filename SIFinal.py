@@ -9,18 +9,10 @@ import csv
 # Name: Bella Karduck
 # Who did you work with: Claire Yang
 
-"""def readDataFromFile(filename):
-    full_path = os.path.join(os.path.dirname(__file__), filename)
-    f = open(full_path)
-    file_data = f.read()
-    f.close()
-    json_data = json.loads(file_data)
-    return json_data"""
 
 def getCounties():
     url = "https://api.census.gov/data/2019/acs/acs1/subject?get=NAME,S0101_C01_001E&for=county:*"
     r = requests.get(url)
-    #x = r.text
     countyDict = r.json()
     
     countyList = []
@@ -32,15 +24,14 @@ def getCounties():
         fullFIP = str(x[2]) + str(x[3])
         newCountyDict["fullFIP"] = fullFIP
         countyList.append(newCountyDict)
-        
-    #newDict = {}
+
     
     return countyList
 
 def get2020CountyPoverty():
     url = "https://api.census.gov/data/timeseries/poverty/saipe?get=SAEPOVRTALL_PT,SAEMHI_PT,GEOID&for=county:*&in=state:*&time=2020"
     r = requests.get(url)
-    #x = r.text
+
     countyList = getCounties()
     newList = []
     for x in countyList:
@@ -89,7 +80,7 @@ def getLowest100Poverty():
    
     return lowest100Poverty
 
-#print(getCounties())
+
 
 
 def setUpDatabase(db_name):
@@ -109,14 +100,11 @@ def makeCountyPlusHighPovTable(cur, conn):
     countyList = getCounties()
     high100Pov = getHighest100Poverty()
    
-    #ORRR YOU JUST MAKE A LIST OF ALL OF THE COUNTIES IN BOTH LISTS! CRAZY XOXO GOSSIP GIRL 
-    # 200 HIGHEST AND LOWEST COMBINED THEN YOU DO THE OTHER THING -- SO YOU SAY, IF FULLFIP IS IN ANY OF THESE 200, ADD TO TABLE :)
     cur.execute(f'SELECT countyID FROM CountyFIP')
     startNum = len(cur.fetchall())
     for county in countyList:
         for x in high100Pov:
             if county['fullFIP'] == x['fullFIP']:
-        # if county['fullFIP'] in high100Pov or county['fullFIP'] in low100pov
                 fullFIP = county['fullFIP']
                 nameList = county['name'].split(",")
                 countyName = nameList[0]
@@ -139,15 +127,12 @@ def makeCountyPlusLowPovTable(cur, conn):
     
     low100Pov = getLowest100Poverty()
 
-    
-    #ORRR YOU JUST MAKE A LIST OF ALL OF THE COUNTIES IN BOTH LISTS! CRAZY XOXO GOSSIP GIRL 
-    # 200 HIGHEST AND LOWEST COMBINED THEN YOU DO THE OTHER THING -- SO YOU SAY, IF FULLFIP IS IN ANY OF THESE 200, ADD TO TABLE :)
     cur.execute(f'SELECT countyID FROM CountyFIP')
     startNum = len(cur.fetchall())
     for county in countyList:
         for x in low100Pov:
             if county['fullFIP'] == x['fullFIP']:
-        # if county['fullFIP'] in high100Pov or county['fullFIP'] in low100pov
+      
                 fullFIP = county['fullFIP']
                 nameList = county['name'].split(",")
                 countyName = nameList[0]
@@ -165,43 +150,7 @@ def makeCountyPlusLowPovTable(cur, conn):
         if (newNum - startNum >= 25):
             break
     conn.commit()
-'''
-def fiveMostPoorStateList():
-    top100 = getHighest100Poverty()
-    stateDict = {}
-    for x in top100:
-        stateCode = x["fullFIP"][:2]
-        if stateCode not in stateDict:
-            stateDict[stateCode] = 1
-        else:
-            stateDict[stateCode] += 1
-        
-    sortedTop100 = sorted(stateDict.keys(), reverse = True)
-    fiveMostPoorStates = []
-    counter = 0
-    for x in sortedTop100:
-        while counter != 5:
-            fiveMostPoorStates.append(x)
-    return fiveMostPoorStates
 
-def fiveMostRichStateList():
-    bottom100 = getLowest100Poverty()
-    stateDict = {}
-    for x in bottom100:
-        stateCode = x["fullFIP"][:2]
-        if stateCode not in stateDict:
-            stateDict[stateCode] = 1
-        else:
-            stateDict[stateCode] += 1
-    sortedBot100 = sorted(stateDict.keys(), reverse = True)
-    fiveMostRichStates = []
-    counter = 0
-    for x in sortedBot100:
-        while counter != 5:
-            fiveMostRichStates.append(x)
-    return fiveMostRichStates
-
-'''
 def writePovertyDataFile(filename, cur, conn):
 
     path = os.path.dirname(os.path.abspath(__file__)) + os.sep
@@ -221,18 +170,14 @@ def writePovertyDataFile(filename, cur, conn):
     for county in poorestCounties:   
         write.writerow((county[0], county[1], county[2], county[3], county[4]))
          
-    
+    conn.commit()
     write_file.close()
     
-
-
-
-
 
    
 def main():
     getCounties()
-    cur, conn = setUpDatabase("covidCounty.db")
+    cur, conn = setUpDatabase("county.db")
     setUpCountyTable(cur, conn)
     counter = 0
     while counter != 4:
@@ -241,6 +186,7 @@ def main():
         counter += 1
     csvFile = '100PoorestAnd100RichestLargeCountiesInUS.csv'
     writePovertyDataFile(csvFile, cur, conn)
+    conn.close()
   
    
 

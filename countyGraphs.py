@@ -93,10 +93,12 @@ def high100BarGraph(cur, conn):
 def main():
    
     path = os.path.dirname(os.path.abspath(__file__))
-    conn = sqlite3.connect(path+'/covidCounty.db')
+    conn = sqlite3.connect(path+'/county.db')
     cur = conn.cursor()
     low100BarGraph(cur, conn)
     high100BarGraph(cur, conn)
+
+    conn.close()
 
 
 
