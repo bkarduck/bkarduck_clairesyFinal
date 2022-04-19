@@ -1,0 +1,201 @@
+CountyFIP,State Name,County Name,Poverty Rate,Median Income
+08035, Colorado,Douglas County,3,122290
+51107, Virginia,Loudoun County,3.2,155362
+27019, Minnesota,Carver County,3.5,107932
+39041, Ohio,Delaware County,3.7,114423
+17093, Illinois,Kendall County,3.9,97263
+47187, Tennessee,Williamson County,4.1,118257
+34019, New Jersey,Hunterdon County,4.1,113611
+55133, Wisconsin,Waukesha County,4.2,92359
+08014, Colorado,Broomfield County,4.2,106263
+18057, Indiana,Hamilton County,4.2,96359
+27139, Minnesota,Scott County,4.3,99924
+55089, Wisconsin,Ozaukee County,4.3,83274
+27163, Minnesota,Washington County,4.4,101409
+27141, Minnesota,Sherburne County,4.4,92673
+19049, Iowa,Dallas County,4.4,92025
+20091, Kansas,Johnson County,4.6,91799
+27171, Minnesota,Wright County,4.6,85855
+33015, New Hampshire,Rockingham County,4.6,96775
+51199, Virginia,York County,4.7,91711
+34027, New Jersey,Morris County,4.7,114103
+48397, Texas,Rockwall County,4.8,106225
+27037, Minnesota,Dakota County,4.8,90562
+34035, New Jersey,Somerset County,4.8,115573
+51153, Virginia,Prince William County,4.9,111117
+31153, Nebraska,Sarpy County,4.9,83104
+55109, Wisconsin,St. Croix County,4.9,82797
+29183, Missouri,St. Charles County,5,90567
+21185, Kentucky,Oldham County,5,105897
+51085, Virginia,Hanover County,5,97717
+49011, Utah,Davis County,5,92253
+18059, Indiana,Hancock County,5.1,77916
+13117, Georgia,Forsyth County,5.1,116690
+55131, Wisconsin,Washington County,5.1,81659
+42029, Pennsylvania,Chester County,5.2,107491
+39165, Ohio,Warren County,5.2,90600
+18011, Indiana,Boone County,5.2,92302
+24003, Maryland,Anne Arundel County,5.2,105979
+24013, Maryland,Carroll County,5.2,104817
+18063, Indiana,Hendricks County,5.2,86905
+13113, Georgia,Fayette County,5.3,98623
+24009, Maryland,Calvert County,5.3,111665
+51059, Virginia,Fairfax County,5.3,132509
+26093, Michigan,Livingston County,5.3,87686
+34037, New Jersey,Sussex County,5.4,92739
+51179, Virginia,Stafford County,5.4,110120
+29165, Missouri,Platte County,5.4,86924
+24027, Maryland,Howard County,5.5,124042
+06081, California,San Mateo County,5.5,132369
+48491, Texas,Williamson County,5.6,91507
+42091, Pennsylvania,Montgomery County,5.6,94094
+49045, Utah,Tooele County,5.7,79101
+36079, New York,Putnam County,5.7,104285
+36059, New York,Nassau County,5.7,122730
+34025, New Jersey,Monmouth County,5.9,104219
+25021, Massachusetts,Norfolk County,5.9,106348
+39103, Ohio,Medina County,5.9,79504
+17043, Illinois,DuPage County,5.9,92101
+51061, Virginia,Fauquier County,6,106977
+34005, New Jersey,Burlington County,6,92471
+42017, Pennsylvania,Bucks County,6,92441
+51013, Virginia,Arlington County,6,125004
+06041, California,Marin County,6,127601
+51161, Virginia,Roanoke County,6,71613
+08059, Colorado,Jefferson County,6.1,90097
+36103, New York,Suffolk County,6.1,109084
+48085, Texas,Collin County,6.2,101560
+24025, Maryland,Harford County,6.2,102537
+39055, Ohio,Geauga County,6.2,84510
+24021, Maryland,Frederick County,6.2,99254
+36091, New York,Saratoga County,6.3,83427
+51003, Virginia,Albemarle County,6.3,79708
+17111, Illinois,McHenry County,6.3,89730
+27109, Minnesota,Olmsted County,6.4,82683
+34003, New Jersey,Bergen County,6.4,107114
+51095, Virginia,James City County,6.5,86501
+21015, Kentucky,Boone County,6.5,82393
+06061, California,Placer County,6.5,100662
+53029, Washington,Island County,6.5,76965
+51177, Virginia,Spotsylvania County,6.6,94299
+06085, California,Santa Clara County,6.6,139462
+51041, Virginia,Chesterfield County,6.6,83598
+55087, Wisconsin,Outagamie County,6.6,70727
+33013, New Hampshire,Merrimack County,6.7,81132
+55073, Wisconsin,Marathon County,6.7,67074
+13073, Georgia,Columbia County,6.7,87489
+13057, Georgia,Cherokee County,6.7,90675
+24031, Maryland,Montgomery County,6.7,115394
+26139, Michigan,Ottawa County,6.7,77465
+18081, Indiana,Johnson County,6.7,76868
+29037, Missouri,Cass County,6.8,82068
+41005, Oregon,Clackamas County,6.8,82539
+51019, Virginia,Bedford County,6.8,70004
+09013, Connecticut,Tolland County,6.9,87247
+49053, Utah,Washington County,6.9,71904
+48121, Texas,Denton County,6.9,90880
+01117, Alabama,Shelby County,7,88444
+08005, Colorado,Arapahoe County,7,82381
+34015, New Jersey,Gloucester County,7,87220
+37179, North Carolina,Union County,7,90920
+17097, Illinois,Lake County,7,100325
+21047,Kentucky,Christian County,16.9,46950
+01121,Alabama,Talladega County,16.9,44802
+34031,New Jersey,Passaic County,16.9,64422
+20209,Kansas,Wyandotte County,16.9,52223
+48005,Texas,Angelina County,17,49943
+48309,Texas,McLennan County,17,55148
+47141,Tennessee,Putnam County,17,47120
+45041,South Carolina,Florence County,17.1,47429
+37147,North Carolina,Pitt County,17.1,49955
+06107,California,Tulare County,17.1,62058
+06019,California,Fresno County,17.1,61401
+12001,Florida,Alachua County,17.2,51995
+04005,Arizona,Coconino County,17.2,57146
+06007,California,Butte County,17.3,54718
+48037,Texas,Bowie County,17.4,50326
+26073,Michigan,Isabella County,17.4,53607
+39095,Ohio,Lucas County,17.5,51642
+48355,Texas,Nueces County,17.5,55727
+01097,Alabama,Mobile County,17.6,50871
+12073,Florida,Leon County,17.6,61403
+51710,Virginia,Norfolk city,17.6,51401
+48141,Texas,El Paso County,17.6,48522
+36047,New York,Kings County,17.8,70390
+22015,Louisiana,Bossier Parish,17.8,53225
+01081,Alabama,Lee County,17.9,58963
+13255,Georgia,Spalding County,17.9,51019
+51760,Virginia,Richmond city,17.9,54815
+48471,Texas,Walker County,18,43002
+06025,California,Imperial County,18.1,47599
+48183,Texas,Gregg County,18.1,51394
+40101,Oklahoma,Muskogee County,18.2,42607
+18105,Indiana,Monroe County,18.2,61808
+48245,Texas,Jefferson County,18.3,48808
+26049,Michigan,Genesee County,18.3,48721
+06029,California,Kern County,18.3,58583
+45059,South Carolina,Laurens County,18.4,43766
+36007,New York,Broome County,18.4,52510
+37023,North Carolina,Burke County,18.4,48729
+13115,Georgia,Floyd County,18.4,47423
+37051,North Carolina,Cumberland County,18.5,49160
+17183,Illinois,Vermilion County,18.6,49678
+42051,Pennsylvania,Fayette County,18.7,45256
+21227,Kentucky,Warren County,18.7,56552
+22079,Louisiana,Rapides Parish,18.7,45130
+28067,Mississippi,Jones County,18.8,49115
+45031,South Carolina,Darlington County,18.9,42082
+05069,Arkansas,Jefferson County,18.9,40588
+55079,Wisconsin,Milwaukee County,19,52281
+45075,South Carolina,Orangeburg County,19.1,41335
+47157,Tennessee,Shelby County,19.1,50870
+37161,North Carolina,Rutherford County,19.1,44004
+35005,New Mexico,Chaves County,19.2,51441
+20161,Kansas,Riley County,19.2,56333
+51121,Virginia,Montgomery County,19.3,62418
+18035,Indiana,Delaware County,19.4,46612
+42101,Pennsylvania,Philadelphia County,19.4,55102
+48347,Texas,Nacogdoches County,19.5,49375
+41035,Oregon,Klamath County,19.7,49675
+48479,Texas,Webb County,19.9,56588
+54011,West Virginia,Cabell County,19.9,44161
+24510,Maryland,Baltimore city,20,51485
+26163,Michigan,Wayne County,20,51777
+40119,Oklahoma,Payne County,20.1,39681
+22105,Louisiana,Tangipahoa Parish,20.1,47272
+13185,Georgia,Lowndes County,20.3,48864
+01101,Alabama,Montgomery County,20.4,49607
+35013,New Mexico,Doña Ana County,20.5,46547
+45085,South Carolina,Sumter County,20.5,45724
+13031,Georgia,Bulloch County,20.7,48629
+18167,Indiana,Vigo County,20.7,45897
+48375,Texas,Potter County,20.8,45903
+29510,Missouri,St. Louis city,20.8,45773
+22017,Louisiana,Caddo Parish,20.9,43216
+13215,Georgia,Muscogee County,21.1,44959
+22071,Louisiana,Orleans Parish,21.1,51704
+37195,North Carolina,Wilson County,21.2,44089
+35045,New Mexico,San Juan County,21.5,44261
+54081,West Virginia,Raleigh County,21.8,44526
+39009,Ohio,Athens County,22,42215
+47113,Tennessee,Madison County,22.2,47580
+48041,Texas,Brazos County,22.3,53570
+22045,Louisiana,Iberia Parish,22.5,50449
+28075,Mississippi,Lauderdale County,22.5,44821
+22097,Louisiana,St. Landry Parish,22.6,39153
+39145,Ohio,Scioto County,22.8,44297
+04017,Arizona,Navajo County,23.3,46698
+22073,Louisiana,Ouachita Parish,23.7,45251
+48215,Texas,Hidalgo County,23.9,46653
+12107,Florida,Putnam County,24.3,36527
+36005,New York,Bronx County,24.4,44906
+48061,Texas,Cameron County,24.4,44440
+13059,Georgia,Clarke County,24.6,46693
+28035,Mississippi,Forrest County,24.9,42082
+13245,Georgia,Richmond County,25.5,43942
+28049,Mississippi,Hinds County,25.9,44671
+37155,North Carolina,Robeson County,26.6,39139
+13095,Georgia,Dougherty County,27.4,40793
+13021,Georgia,Bibb County,28,44467
+35031,New Mexico,McKinley County,32,35659
+04001,Arizona,Apache County,32.4,36319
