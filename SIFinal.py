@@ -19,8 +19,7 @@ def getCounties():
     for x in countyDict[1:]:
         newCountyDict = {}
         newCountyDict["name"] = x[0]
-        newCountyDict["stateFIP"] = x[2]
-        newCountyDict["countyFIP"] = x[3]
+    
         fullFIP = str(x[2]) + str(x[3])
         newCountyDict["fullFIP"] = fullFIP
         countyList.append(newCountyDict)
@@ -91,7 +90,7 @@ def setUpDatabase(db_name):
 
 def setUpCountyTable(cur, conn):
     
-    cur.execute(f'CREATE TABLE IF NOT EXISTS CountyFIP (countyID TEXT PRIMARY KEY, countyName TEXT, stateName TEXT,  stateFIP TEXT, countyFIP TEXT)')
+    cur.execute(f'CREATE TABLE IF NOT EXISTS CountyFIP (countyID TEXT PRIMARY KEY, name TEXT,  stateFIP TEXT, countyFIP TEXT)')
     cur.execute(f'CREATE TABLE IF NOT EXISTS Low100Poverty (countyID TEXT PRIMARY KEY, povertyRate NUMBER, medianIncome NUMBER)')
     cur.execute(f'CREATE TABLE IF NOT EXISTS High100Poverty (countyID TEXT PRIMARY KEY, povertyRate NUMBER, medianIncome NUMBER)')
 
@@ -106,17 +105,14 @@ def makeCountyPlusHighPovTable(cur, conn):
         for x in high100Pov:
             if county['fullFIP'] == x['fullFIP']:
                 fullFIP = county['fullFIP']
-                nameList = county['name'].split(",")
-                countyName = nameList[0]
-                stateName = nameList[1][1:]
-                stateFIP = county['stateFIP']
-                countyFIP = county['countyFIP']
+                name = county['name']
+                
                 povRate = x['povertyRate']
                 medIncome = x['medianIncome']
 
                 cur.execute(f'INSERT OR IGNORE INTO High100Poverty (countyID, povertyRate, medianIncome) VALUES (?, ?, ?)', (fullFIP, povRate, medIncome))
 
-                cur.execute(f'INSERT OR IGNORE INTO CountyFIP (countyID, countyName, stateName, stateFIP, countyFIP) VALUES (?, ?, ?, ?, ?)', (fullFIP, countyName, stateName, stateFIP, countyFIP))
+                cur.execute(f'INSERT OR IGNORE INTO CountyFIP (countyID, name) VALUES (?, ?)', (fullFIP, name))
                 cur.execute(f'SELECT countyID FROM CountyFIP')
         newNum = len(cur.fetchall())
         if (newNum - startNum >= 25):
@@ -134,44 +130,19 @@ def makeCountyPlusLowPovTable(cur, conn):
             if county['fullFIP'] == x['fullFIP']:
       
                 fullFIP = county['fullFIP']
-                nameList = county['name'].split(",")
-                countyName = nameList[0]
-                stateName = nameList[1]
-                stateFIP = county['stateFIP']
-                countyFIP = county['countyFIP']
+                name = county['name']
+              
                 povRate = x['povertyRate']
                 medIncome = x['medianIncome']
 
                 cur.execute(f'INSERT OR IGNORE INTO Low100Poverty (countyID, povertyRate, medianIncome) VALUES (?, ?, ?)', (fullFIP, povRate, medIncome))
 
-                cur.execute(f'INSERT OR IGNORE INTO CountyFIP (countyID, countyName, stateName, stateFIP, countyFIP) VALUES (?, ?, ?, ?, ?)', (fullFIP, countyName, stateName, stateFIP, countyFIP))
+                cur.execute(f'INSERT OR IGNORE INTO CountyFIP (countyID, name) VALUES (?, ?)', (fullFIP, name))
                 cur.execute(f'SELECT countyID FROM CountyFIP')
         newNum = len(cur.fetchall())
         if (newNum - startNum >= 25):
             break
     conn.commit()
-
-def writePovertyDataFile(filename, cur, conn):
-
-    path = os.path.dirname(os.path.abspath(__file__)) + os.sep
-    write_file = open(path + filename, "w")
-    write = csv.writer(write_file, delimiter=",")
-    write.writerow(('CountyFIP',"State Name", "County Name", "Poverty Rate","Median Income"))
-
-
-    cur.execute("SELECT Low100Poverty.countyID, CountyFIP.stateName, CountyFIP.countyName, Low100Poverty.povertyRate, Low100Poverty.medianIncome FROM Low100Poverty JOIN CountyFIP ON Low100Poverty.countyID = CountyFIP.countyID")
-    richestCounties = sorted(cur.fetchall(), key = lambda x: x[3])
-
-    cur.execute("SELECT High100Poverty.countyID, CountyFIP.stateName, CountyFIP.countyName, High100Poverty.povertyRate, High100Poverty.medianIncome FROM High100Poverty JOIN CountyFIP ON High100Poverty.countyID = CountyFIP.countyID")
-    poorestCounties = sorted(cur.fetchall(), key = lambda x: x[3])
-    for county in richestCounties:  
-        write.writerow((county[0], county[1], county[2], county[3], county[4]))
-    
-    for county in poorestCounties:   
-        write.writerow((county[0], county[1], county[2], county[3], county[4]))
-         
-    conn.commit()
-    write_file.close()
     
 
    
@@ -179,13 +150,10 @@ def main():
     getCounties()
     cur, conn = setUpDatabase("county.db")
     setUpCountyTable(cur, conn)
-    counter = 0
-    while counter != 4:
-        makeCountyPlusHighPovTable(cur, conn)
-        makeCountyPlusLowPovTable(cur, conn)
-        counter += 1
-    csvFile = '100PoorestAnd100RichestLargeCountiesInUS.csv'
-    writePovertyDataFile(csvFile, cur, conn)
+    
+    makeCountyPlusHighPovTable(cur, conn)
+    makeCountyPlusLowPovTable(cur, conn)
+  
     conn.close()
   
    
