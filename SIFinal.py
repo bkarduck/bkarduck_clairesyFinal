@@ -6,8 +6,7 @@ import os
 import requests
 import csv
 
-# Name: Bella Karduck
-# Who did you work with: Claire Yang
+# Name: Bella Karduck, Claire Yang
 
 
 def getCounties():
